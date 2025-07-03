@@ -1,0 +1,60 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Todo List App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <style>
+    body {
+    background-color:rgb(142, 153, 172);
+   }
+
+   #todoList li {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+  }
+  </style>
+
+</head>
+
+
+<body>
+<div class="container py-5">
+  <h2 class="text-center mb-4">Todo List</h2>
+
+  <div class="row mb-4">
+    <div class="col-md-4">
+      <input type="text" id="searchInput" class="form-control" placeholder="Search by task name">
+    </div>
+    <div class="col-md-3">
+      <input type="date" id="fromDate" class="form-control">
+    </div>
+    <div class="col-md-3">
+      <input type="date" id="toDate" class="form-control">
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-primary w-100" onclick="applyFilters()">Filter</button>
+    </div>
+  </div>
+
+  <form id="addTodoForm" class="row g-2 mb-4">
+        <div class="col-md-9">
+           <input type="text" id="todoInput" class="form-control" placeholder="Enter new task" required>
+        </div>
+    <div class="col-md-3">
+      <button type="submit" class="btn btn-success w-100">Add Task</button>
+    </div>
+  </form>
+
+  <div id="loading" class="text-center mb-3 d-none"> Loading...</div>
+  <div id="error" class="alert alert-danger d-none"></div>
+  <ul id="todoList" class="list-group mb-3"></ul>
+  <nav>
+    <ul id="pagination" class="pagination justify-content-center"></ul>
+  </nav>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
